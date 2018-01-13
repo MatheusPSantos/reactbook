@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Componentes 1</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script type="text/javascript" src="react/build/react.js"></script>
+    <script type="text/javascript" src="react/build/react-dom.js"></script>
+    <script type="text/javascript">
+        
+        // para criar um novo componente
+        var Component = React.createClass({
+            /* especificações do componente */
+            
+            // especificação é um objeto Js obrigatório render() e alguns métodos e propriedades
+            // exemplo simples
+            render: function() {
+                return React.DOM.span({id: "my-span"}, "Eu sou um componente customizado.");
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(Component), // createElement() é uma maneira de criar uma instância do componente
+            document.getElementById("app"),
+        );
+    </script>
+</body>
+</html>
