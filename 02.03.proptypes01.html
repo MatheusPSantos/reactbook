@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>propTypes 2</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script type="text/javascript" src="react/build/react.js"></script>
+    <script type="text/javascript" src="react/build/react-dom.js"></script>
+    <script type="text/javascript">
+        // Valores Default das propriedades
+        // evitar um código boilerplate defensivo com o método getDefaultProps()
+        var Component = React.createClass({
+            // propriedades que o component pode possuir
+            propTypes: {
+                firstName:  React.PropTypes.string.isRequired,
+                middleName: React.PropTypes.string,
+                famillyName:React.PropTypes.string.isRequired,
+                address:    React.PropTypes.string,
+            },
+            // valores padrões para as propriedades do component
+            getDefaultProps: function() {
+                // retornando um objeto com os valores default das propriedades
+                return {
+                    middleName: '',
+                    address: 'n/a',
+                };
+            },
+
+            render: function() {
+                /**/
+            }
+        });
+    </script>
+</body>
+</html>
