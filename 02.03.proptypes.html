@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>propTypes 1</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script type="text/javascript" src="react/build/react.js"></script>
+    <script type="text/javascript" src="react/build/react-dom.js"></script>
+    <script type="text/javascript">
+        // Podemos acrescentar a propriedade propTypes
+        // serve para declarar a lista de propriedades do nosso component
+       var Component = React.createClass({
+           propTypes: {
+               name: React.PropTypes.string.isRequired,
+           },
+
+           render: function() {
+               return   React.DOM.span(null, "My name is " + this.props.name);
+           }
+       });
+
+       ReactDOM.render(
+           React.createElement(Component, {
+                name: "Bob Marley",   // caso a propriedade não seja informada
+                                        // haverá um erro no console do navegador
+           }),
+           document.getElementById("app")
+       );
+    </script>
+</body>
+</html>
