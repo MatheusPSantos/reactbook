@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estado 2</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="react/build/react.js"></script>
+    <script type="text/javascript" src="react/build/react-dom.js"></script>
+    <script type="text/javascript">
+        // Implementado um componente com estado
+        // componente
+        var TextAreaCounter = React.createClass({
+            // propriedades dos elementos
+            propTypes: {
+                defaultText: React.PropTypes.string,
+            },
+            // valores padrões das propriedades
+            getDefaultProps: function() {
+                return {defaultText: ''};
+            },
+            render: function() {
+                return React.DOM.div(null,
+                    React.DOM.textarea({
+                        value: this.state.defaultText, // this.state no lugar de this.props
+                        onChange: this._textChange,
+                    }),
+                    React.DOM.h3(null, this.state.defaultText.length),
+                );
+            },
+            // getInitialState() -> garantir dados saudáveis
+            getInitialState: function() {
+                return {defaultText: this.props.defaultText};
+            },
+            // método auxiliar para fazer a modificação do estado
+            _textChange: function(ev) {
+                this.setState({defaultText: ev.target.value,});
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(TextAreaCounter),
+            document.getElementById("app"),
+        );
+    </script>
+</body>
+</html>
